@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 25px 60px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+.main-content {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  padding: 40px 45px;
+  width: 95%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.section-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  flex: 1 1 280px;
+  margin: 0;
+}
+
+/* Controls - Periodo y navegación */
+.periodo-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background-color: #4facfe;
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 16px rgba(79, 172, 254, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background-color: #367ee2;
+}
+
+.periodo-select {
+  border-radius: 14px;
+  border: 2px solid #4facfe;
+  padding: 10px 18px;
+  font-weight: 600;
+  color: #4facfe;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: #f5faff;
+  box-shadow: 0 3px 10px rgba(79,172,254,0.3);
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.periodo-select:hover,
+.periodo-select:focus {
+  border-color: #367ee2;
+  color: #367ee2;
+  outline: none;
+}
+
+/* KPIs Grid */
+.kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+/* KPI Cards */
+.kpi-card {
+  background: #f5faff;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgba(76, 172, 254, 0.3);
+  padding: 25px 30px;
+  text-align: center;
+  font-weight: 700;
+  color: #2c3e50;
+  user-select: none;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.kpi-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #0984e3;
+}
+
+.kpi-card p {
+  font-size: 2.6rem;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.kpi-card.crecimiento p.positivo {
+  color: #00b894;
+}
+
+.kpi-card.crecimiento p.negativo {
+  color: #d63031;
+}
+
+.kpi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(76, 172, 254, 0.5);
+}
+
+/* Chart card */
+.chart-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  padding: 30px 30px 40px;
+  user-select: none;
+}
+
+.chart-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #34495e;
+}
+
+/* Inventario filtros */
+.filtros-inventario {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filtros-inventario select {
+  border-radius: 14px;
+  border: 2px solid #0984e3;
+  padding: 10px 18px;
+  font-weight: 600;
+  color: #0984e3;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: #f0faff;
+  box-shadow: 0 3px 10px rgba(9,132,227,0.3);
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.filtros-inventario select:hover,
+.filtros-inventario select:focus {
+  border-color: #065a9a;
+  color: #065a9a;
+  outline: none;
+}
+
+/* Inventario chart */
+.inventario-chart-card {
+  margin-top: 10px;
+}
+
+/* Tooltip estilo personalizado */
+.custom-tooltip {
+  background: #2c3e50;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.5);
+  font-size: 14px;
+  user-select: none;
+}
+
+/* Scroll para barras largas */
+.recharts-wrapper {
+  overflow-x: auto !important;
+  padding-bottom: 8px;
+}

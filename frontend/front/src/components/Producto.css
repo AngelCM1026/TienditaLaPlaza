@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 140px;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.info {
+  padding: 0.75rem;
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-name {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #003366;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-price {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Controles con botón apilado (cantidad arriba, agregar debajo) */
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  gap: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Selector de cantidad estilo neón claro */
+.qty-selector {
+  display: flex;
+  align-items: center;
+  background: #e0f7fa; /* azul muy claro */
+  border-radius: 10px;
+  box-shadow: 0 0 8px #4dd0e1aa;
+  padding: 0 10px;
+}
+
+/* Botones + y - con color claro y neón */
+.qty-btn {
+  background: transparent;
+  border: none;
+  color: #80deea; /* azul claro neón */
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  user-select: none;
+  filter: drop-shadow(0 0 3px #4dd0e1);
+}
+
+.qty-btn:hover {
+  color: #4dd0e1;
+  filter: drop-shadow(0 0 8px #26c6da);
+}
+
+/* Cantidad centrada y visible */
+.qty-value {
+  width: 40px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #007c91;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Botón agregar al carrito destacado debajo de cantidad */
+.add-btn {
+  background: #007c91;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 0 12px #00bcd4aa;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-btn:hover {
+  background: #00acc1;
+  box-shadow: 0 0 15px #00bcd4cc;
+}
+
+/* Responsive: centrado y con buen tamaño en móvil */
+@media (max-width: 480px) {
+  .actions {
+    align-items: center;
+  }
+  .qty-selector {
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .add-btn {
+    width: 100%;
+  }
+}

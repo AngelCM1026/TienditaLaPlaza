@@ -1,0 +1,173 @@
+.orders-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.orders-container h2 {
+  margin-bottom: 1.5rem;
+  color: #003366;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.last-updated {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: right;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #f0f4f8;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+  gap: 1rem;
+}
+
+.status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Colores para los estados */
+.status.nuevo {
+  background-color: #007bff;
+}
+.status.en_proceso {
+  background-color: #ffc107;
+  color: #222;
+}
+.status.en_camino {
+  background-color: #17a2b8;
+}
+.status.entregado {
+  background-color: #28a745;
+}
+.status.cancelado {
+  background-color: #dc3545;
+}
+
+.order-items {
+  padding: 1rem 1.5rem;
+  background: #fafafa;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 1rem;
+  color: #444;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.no-products {
+  font-style: italic;
+  color: #888;
+  padding: 0.5rem 0;
+}
+
+.order-total {
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  text-align: right;
+  font-size: 1.25rem;
+  color: #003366;
+  background: #f0f4f8;
+  border-top: 1px solid #ddd;
+}
+
+/* Barra de progreso */
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 1.5rem;
+  position: relative;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  text-align: center;
+  color: #bbb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: default;
+}
+
+.progress-step.active {
+  color: #003366;
+  font-weight: 700;
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #bbb;
+  color: white;
+  line-height: 28px;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.progress-step.active .step-number {
+  background: #007bff;
+}
+
+.step-label {
+  white-space: nowrap;
+}
+
+/* Barra entre pasos */
+.step-bar {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 100%;
+  height: 4px;
+  background: #ddd;
+  z-index: -1;
+  transform: translateX(50%);
+  border-radius: 2px;
+}
+
+.step-bar.filled {
+  background: #007bff;
+}

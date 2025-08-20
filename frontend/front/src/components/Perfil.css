@@ -1,0 +1,74 @@
+/* src/components/Perfil.css */
+
+.perfil-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f7fc;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.perfil-card {
+  background: white;
+  max-width: 450px;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-align: left;
+}
+
+.perfil-card h1 {
+  margin-bottom: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
+
+.perfil-item {
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.perfil-item label {
+  font-weight: 600;
+  color: #555;
+}
+
+.perfil-item span {
+  color: #222;
+  max-width: 60%;
+  text-align: right;
+  word-wrap: break-word;
+}
+
+.btn-cambiar-contrasena {
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cambiar-contrasena:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #d9534f;
+  text-align: center;
+  font-weight: 600;
+}

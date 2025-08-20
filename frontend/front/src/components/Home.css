@@ -1,0 +1,104 @@
+/* Fondo uniforme para toda la página */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f9fafb; /* gris muy claro, uniforme */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+/* Grid de productos */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+/* Card producto */
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Imagen producto */
+.product-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  transition: height 0.3s ease;
+}
+
+/* Botón agregado (si tienes alguno) */
+button {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+/* Ajustes para evitar que la página se vea blanca en scroll */
+main {
+  min-height: 100vh; /* que siempre ocupe toda la altura */
+  background-color: #f9fafb;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* ===== Responsividad ===== */
+
+/* Tablets y móviles en general */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.75rem;
+  }
+  .product-card {
+    padding: 0.75rem;
+  }
+  .product-image {
+    height: 120px;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+  .product-card {
+    padding: 0.5rem;
+  }
+  .product-image {
+    height: 100px;
+  }
+  button {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+.inventario-contenedor {
+  padding: 25px 30px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+h2 {
+  color: #007bff;
+  font-weight: 700;
+}
+
+.busqueda input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.busqueda input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.4);
+  outline: none;
+}
+
+.lista-busqueda {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.item-busqueda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.item-busqueda:hover {
+  background-color: #e6f0ff;
+  transform: translateX(3px);
+}
+.icono-producto {
+  color: #007bff;
+}
+
+.tarjetas-inventario {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.tarjeta-modern {
+  background-color: #fff;
+  padding: 20px 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.tarjeta-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.tarjeta-modern h4 {
+  margin: 8px 0 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+.tarjeta-modern .categoria {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Barra de stock */
+.barra-stock {
+  width: 100%;
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  margin: 10px 0 5px;
+  overflow: hidden;
+}
+.barra-llenada {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s;
+}
+.stock-texto {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+  text-align: right;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.modal-contenido {
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 18px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0px 12px 28px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+}
+.modal-contenido.modal-agregar-stock {
+  border-top: 5px solid #007bff;
+}
+.modal-contenido.modal-detalle-producto {
+  border-top: 5px solid #28a745;
+  width: 90%;
+  max-width: 700px;
+  text-align: left;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.detalle-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.detalle-izquierda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detalle-derecha {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nombre-detalle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.detalle-info p {
+  font-size: 1rem;
+  margin: 4px 0;
+  color: #333;
+}
+.detalle-info span {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Barra de stock elegante */
+.barra-stock-detalle {
+  width: 100%;
+  height: 18px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+.barra-llenada-detalle {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+.stock-texto-detalle {
+  font-size: 0.9rem;
+  color: #333;
+  text-align: right;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+/* Botones del modal */
+.modal-botones {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+.modal-botones button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.modal-botones button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.cancelar {
+  background-color: #dc3545;
+}
+
+.mensaje-stock {
+  font-size: 1rem;
+  color: #b10000;
+  padding: 10px;
+  background-color: #ffecec;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}

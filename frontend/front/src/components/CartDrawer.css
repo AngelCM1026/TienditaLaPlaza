@@ -1,0 +1,209 @@
+/* capa semitransparente y centrar drawer */
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 500;
+}
+
+/* panel */
+.cart-drawer {
+  width: 380px;
+  max-width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #fdfdfd 0%, #f0f4f8 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: -4px 0 16px rgba(0,0,0,0.4);
+  font-family: 'Poppins', sans-serif;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* header */
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #005f73, #0a9396);
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.close-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.close-btn:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* carrito vacío */
+.empty-msg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* listado de items */
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+  margin: 0;
+  list-style: none;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  margin: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background 0.2s;
+}
+.cart-item:hover {
+  background: #e6f2ff;
+  transform: translateY(-2px);
+}
+
+/* thumbnail */
+.item-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 0.75rem;
+  border: 2px solid #0a9396;
+}
+
+/* info del producto */
+.item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.item-name {
+  font-weight: 700;
+  color: #005f73;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+.qty-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+}
+.qty-controls button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #94d2bd;
+  color: #003344; /* azul más oscuro para mejor contraste */
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* ícono más grande */
+  padding: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.qty-controls button svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none; /* para que no interfiera el icono */
+}
+
+.qty-controls button:hover {
+  background: #0a9396;
+  color: #fff; /* ícono blanco en hover */
+}
+
+.qty-controls span {
+  min-width: 22px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #005f73;
+}
+.item-price {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+/* botón eliminar */
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #c1121f;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  transition: transform 0.2s, color 0.2s;
+}
+.remove-btn:hover {
+  transform: scale(1.2);
+  color: #ff0000;
+}
+
+/* footer */
+.cart-footer {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+  font-family: 'Poppins', sans-serif;
+}
+.subtotal {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+.checkout-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #ee9b00, #ca6702);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.checkout-btn:disabled {
+  background: #ccc;
+  cursor: default;
+}
+.checkout-btn:not(:disabled):hover {
+  background: linear-gradient(90deg, #ca6702, #bb3e03);
+  transform: scale(1.02);
+}

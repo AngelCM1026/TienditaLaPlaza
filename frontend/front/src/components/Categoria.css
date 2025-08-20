@@ -1,0 +1,61 @@
+/* Contenedor de categorías independiente */
+.category-grid-no-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* ancho mínimo acorde al círculo */
+  gap: 2rem 3rem; /* 2rem separación vertical, 3rem horizontal */
+  padding: 1rem;
+  justify-items: center;
+  font-family: 'Poppins', sans-serif; /* Fuente más moderna */
+}
+
+/* Cada ítem de categoría */
+.category-item {
+  all: unset; /* evita herencia de estilos globales */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.category-item.selected {
+  transform: translateY(-4px);
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen circular con sombra suave */
+.category-image-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #e6f0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem; /* más espacio entre círculo y texto */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.category-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;  /* cambia esto */
+  border-radius: 50%;
+}
+
+/* Nombre de categoría sin subrayado */
+.category-item h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-bottom: none;
+}
